@@ -1,9 +1,18 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Fireworks } from 'fireworks-js'
-
+import { useEffect, useRef } from "react"
 
 export default function FinalScreen() {
+    const canvasRef = useRef(null)
+
+    useEffect(() => {
+        const canvas = canvasRef.current
+        if (canvas) {
+            const fireworks = new Fireworks(canvas, { /* options */ })
+            fireworks.start()
+        }
+    }, [])
     return (
         <motion.div
             className="flex flex-col items-center justify-center h-full w-full text-center px-2"  
