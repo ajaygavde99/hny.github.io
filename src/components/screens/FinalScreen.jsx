@@ -41,13 +41,13 @@ export default function FinalScreen() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, delay: 0.3 }}
             >
-                You’ll always be special to me
+                You’ll always be very special to me
                 Happy New Year Babe! ❤️
             </motion.h2>
             {/* Heart WebGL Canvas */}
             <canvas
                 id="c"
-                style={{ position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', zIndex: 0, opacity: 0.3 }}
+                style={{ position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', zIndex: 0, opacity: 0.4 }}
             />
         </motion.div>
     )
