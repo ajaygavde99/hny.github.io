@@ -4,18 +4,19 @@ import { Fireworks } from 'fireworks-js'
 import { useEffect, useRef } from "react"
 
 export default function FinalScreen() {
-    const canvasRef = useRef(null)
+    const fireworksRef = useRef(null)
 
     useEffect(() => {
-        const canvas = canvasRef.current
-        if (canvas) {
-            const fireworks = new Fireworks(canvas, { /* options */ })
+        if (fireworksRef.current) {
+            const fireworks = new Fireworks(fireworksRef.current, { /* options */ })
             fireworks.start()
+            return () => fireworks.stop()
         }
     }, [])
+
     return (
         <motion.div
-            className="flex flex-col items-center justify-center h-full w-full text-center px-2"  
+            className="flex flex-col items-center justify-center h-full w-full text-center px-2"
         >
             {/* GIF */}
             <motion.div
@@ -34,7 +35,6 @@ export default function FinalScreen() {
                     unoptimized
                 />
             </motion.div>
-
             {/* Final Text */}
             <motion.h2
                 className="mt-8 text-3xl md:text-4xl font-dancing-script text-zinc-50 font-medium leading-tight"
@@ -45,8 +45,8 @@ export default function FinalScreen() {
                 You’ll always be special to me
                 Happy New Year Babe! ❤️
             </motion.h2>
-            {/* Fireworks Canvas */}
-            <canvas id="fireworks"></canvas>
+            {/* Fireworks Container */}
+            <div ref={fireworksRef} style={{ width: '100vw', height: '100vh', position: 'fixed', left: 0, top: 0, zIndex: 0 }} />
         </motion.div>
     )
 }
