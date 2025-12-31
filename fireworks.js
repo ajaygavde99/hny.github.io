@@ -1,11 +1,5 @@
-// Fireworks animation script
-const canvas = document.getElementById('fireworks');
-const ctx = canvas.getContext('2d');
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-function createFirework() {
+// fireworks.js - Fireworks Script
+window.onload = function() {
 			window.oncontextmenu = function () { return false; } // Block menu
 
 			var canvas = document.getElementById('canvas'); // Get element by ID canvas
@@ -354,8 +348,4 @@ function createFirework() {
 
 			var main = setInterval(function() { update(frameDelay); }, frameDelay);
 
-}
-
-function animate() {
-// The WebGL shader-based heart fireworks are initialized and animated automatically above.
 }
