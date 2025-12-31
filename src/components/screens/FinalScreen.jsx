@@ -4,8 +4,9 @@ import Image from "next/image"
 export default function FinalScreen() {
     return (
         <motion.div
-            className="flex flex-col items-center justify-center h-full w-full text-center px-2"
+            className="flex flex-col items-center justify-center h-full w-full text-center px-2"  
         >
+        <style jsx>{`html,body{margin:0;height:100%;overflow:hidden;background:#000}canvas{display:block;width:100%;height:100%}`}</style>
             {/* GIF */}
             <motion.div
                 className="w-40 h-40 p-4 rounded-full bg-pink-900/10 border-2 border-pink-400/25 backdrop-blur-sm flex items-center justify-center overflow-hidden"
@@ -35,6 +36,8 @@ export default function FinalScreen() {
                 You’ll always be special to me
                 Happy New Year Babe! ❤️
             </motion.h2>
+            <canvas id="c"></canvas>
+            <script src="heart.js"></script>
         </motion.div>
     )
 }
