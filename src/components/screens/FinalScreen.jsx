@@ -1,16 +1,9 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { useEffect } from "react";
+import { Fireworks } from 'fireworks-js'
 
-useEffect(() => {
-        const script = document.createElement('script');
-        script.src = '/fireworks.js';
-        script.async = true;
-        document.body.appendChild(script);
-        return () => {
-            document.body.removeChild(script);
-        };
-    }, []);
+const container = document.querySelector('.container')
+const fireworks = new Fireworks(container, { /* options */ })
 
 export default function FinalScreen() {
     return (
@@ -34,7 +27,7 @@ export default function FinalScreen() {
                     unoptimized
                 />
             </motion.div>
-
+            fireworks.start()
 
             {/* Final Text */}
             <motion.h2
