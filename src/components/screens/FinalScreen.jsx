@@ -1,7 +1,16 @@
+import { useEffect } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
 export default function FinalScreen() {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = '/fireworks.js';
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
     return (
         <motion.div
             className="flex flex-col items-center justify-center h-full w-full text-center px-2"  

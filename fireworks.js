@@ -1,23 +1,22 @@
 // Fireworks animation script
-const canvas = document.getElementById('fireworks');
-const ctx = canvas.getContext('2d');
+window.triggerFireworks = function triggerFireworks() {
+    const canvas = document.getElementById('fireworks');
+    if (!canvas) return;
+    const gl = canvas.getContext('webgl2');
+    if (!gl) { alert('WebGL 2 required'); return; }
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-function createFirework() {
-const gl = canvas.getContext('webgl2');
-if (!gl) { alert('WebGL 2 required'); }
+    const vs = `#version 300 es
+    in vec2 a;
+    void main(){ gl_Position=vec4(a,0,1); }`;
 
-const vs = `#version 300 es
-in vec2 a;
-void main(){ gl_Position=vec4(a,0,1); }`;
-
-const fs = `#version 300 es
-precision highp float;
-uniform vec3  iResolution;
-uniform float iTime;
-uniform vec4  iMouse;
+    const fs = `#version 300 es
+    precision highp float;
+    uniform vec3  iResolution;
+    uniform float iTime;
+    uniform vec4  iMouse;
 out vec4 fragColor;
 
 /* -----------  YOUR ORIGINAL SHADER  ------------ */
@@ -167,9 +166,6 @@ function frame(t) {
   requestAnimationFrame(frame);
 }
 // The WebGL shader-based heart fireworks are initialized and animated automatically above.
-requestAnimationFrame(frame);
-}
 
-function animate() {
-// The WebGL shader-based heart fireworks are initialized and animated automatically above.
+    requestAnimationFrame(frame);
 }
