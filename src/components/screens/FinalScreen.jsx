@@ -1,9 +1,5 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Fireworks } from 'fireworks-js'
-
-const container = document.querySelector('.container')
-const fireworks = new Fireworks(container, { /* options */ })
 
 export default function FinalScreen() {
     return (
