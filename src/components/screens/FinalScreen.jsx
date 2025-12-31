@@ -1,5 +1,10 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Fireworks } from 'fireworks-js'
+
+const container = document.querySelector('.container')
+const fireworks = new Fireworks(container, { /* options */ })
+fireworks.start()
 
 export default function FinalScreen() {
     return (
@@ -23,7 +28,6 @@ export default function FinalScreen() {
                     unoptimized
                 />
             </motion.div>
-            fireworks.start()
 
             {/* Final Text */}
             <motion.h2
