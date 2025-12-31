@@ -47,7 +47,7 @@ export default function FinalScreen() {
             {/* Heart WebGL Canvas */}
             <canvas
                 id="c"
-                style={{ position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', zIndex: 0 }}
+                style={{ position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', zIndex: 0, opacity: 0.3 }}
             />
         </motion.div>
     )
