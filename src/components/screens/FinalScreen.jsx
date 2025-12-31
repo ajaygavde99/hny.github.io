@@ -1,5 +1,16 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { useEffect } from "react";
+
+useEffect(() => {
+        const script = document.createElement('script');
+        script.src = '/fireworks.js';
+        script.async = true;
+        document.body.appendChild(script);
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
 
 export default function FinalScreen() {
     return (
@@ -37,7 +48,6 @@ export default function FinalScreen() {
             </motion.h2>
             {/* Fireworks Canvas */}
             <canvas id="fireworks"></canvas>
-            <script src="fireworks.js"></script>
         </motion.div>
     )
 }
