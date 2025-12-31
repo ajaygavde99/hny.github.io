@@ -33,6 +33,7 @@ export default function FinalScreen() {
                 transition={{ duration: 0.7, delay: 0.3 }}
             >
                 You’ll always be special to me
+                Happy New Year Babe! ❤️
             </motion.h2>
         </motion.div>
     )
