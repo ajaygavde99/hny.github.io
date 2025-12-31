@@ -38,7 +38,6 @@ export default function FinalScreen() {
             {/* Fireworks Container */}
             <canvas id="c"></canvas>
             <script src="heart.js"></script>
-            <div ref={fireworksRef} style={{ width: '100vw', height: '100vh', position: 'fixed', left: 0, top: 0, zIndex: 0 }} />
         </motion.div>
     )
 }
